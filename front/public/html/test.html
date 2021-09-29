@@ -1,0 +1,33 @@
+<script src="../js/promise.polyfill.min.js"></script>
+<script>
+	async function foo() {
+    return  1
+}
+console.log(foo())
+
+if(0) {
+	console.log(true)
+}
+
+console.log('0' == false)
+
+const arr = [1,2,3,4]
+const arg = {...arr}
+console.log(arg)
+const name = {naem: 'jsy'}
+console.log(name)
+
+console.log(name.length > 0)
+
+defaultValue = {
+    name : 'anonymous',
+    gender : 'unknown'
+}
+newValue = {
+    name : 'Jack',
+        gender : 'male'
+}
+const mergedValue = Object.assign(defaultValue , newValue)
+
+console.log({...defaultValue, ...newValue})
+</script>
