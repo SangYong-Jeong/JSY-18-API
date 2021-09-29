@@ -8,6 +8,7 @@ const port = process.env.PORT
 const path = require('path')
 const express = require('express')
 const app = express()
+const jwt = require('jsonwebtoken');
 
 
 /*************** server init **************/
@@ -30,9 +31,12 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 
 
 /*************** router init **************/
-// const Router = require('./routes/')
-
-// app.use('/', Router)
+app.get('/token', (req,res,next)=>{
+	let token = jwt.sign({ userid: 'booldook', nickname: '불둑' }, 
+	process.env.JWT_KEY, 
+	{ expiresIn: 60 * 60 });
+	res.send(token)
+})
 
 
 /**************** error init **************/
